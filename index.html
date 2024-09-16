@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Loader</title>
+    <style>
+        body {margin: 0; overflow: hidden; }
+        #joystick { width: 100px; height: 100px; position: absolute; bottom: 50px; left: 50px; }
+    </style>
+</head>
+<body>
+    <canvas class = "webgl"></canvas>
+    <div id="joystick"></div>
+    <div id="lookaround" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.125.2/build/three.module.js"></script>
+    <!-- Find the latest version for nipplejs -->
+    <script src="https://cdn.jsdelivr.net/npm/nipplejs@0.10.2/dist/nipplejs.min.js"></script>
+    <script type="module" src="index.js"></script>   
+
+    <!-- Link to your GitHub repository or live page -->
+ <footer>
+    <p>Check the project on <a href="https://github.com/RazerN/razernAR" target="_blank">GitHub</a>.</p>
+    <p>View the live project on <a href="https://RazerN.github.io/razernAR" target="_blank">GitHub Pages</a>.</p>
+</footer>
+
+<script>
+    // Your Three.js and NippleJS code here
+    const joystick = nipplejs.create({
+        zone: document.getElementById('joystick'),
+        mode: 'static',
+        position: { left: '50px', top: '50px' },
+    });
+
+    joystick.on('move', (evt, data) => {
+        // Handle joystick movement
+    });
+
+    joystick.on('end', () => {
+        // Handle joystick release
+    });
+</script>
+
+</body>
+</html> 
